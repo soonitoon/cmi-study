@@ -8,8 +8,22 @@ let year = dateInstance.getFullYear();
 let month = dateInstance.getMonth() + 1;
 let date = dateInstance.getDate();
 
-let dateArray = [];
+const setCurrentDate = () => {
+  yearContainer.innerText = year;
+  monthContainer.innerText = month;
+};
 
-for (let i = 1; i < 32; i++) {
-  dateArray.push(i);
-}
+const drawDateTemplate = () => {
+  for (let i = 1; i < 32; i++) {
+    const eachDate = document.createElement("li");
+    eachDate.innerText = i;
+    dateContainer.appendChild(eachDate);
+  }
+};
+
+const init = () => {
+  drawDateTemplate();
+  setCurrentDate();
+};
+
+init();
