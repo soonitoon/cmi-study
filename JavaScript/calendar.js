@@ -1,6 +1,6 @@
 const yearContainer = document.querySelector(".year");
 const monthContainer = document.querySelector(".month");
-const dateContainer = document.querySelector(".date");
+const dateContainer = document.querySelector(".date_list");
 
 const dateInstance = new Date();
 
