@@ -16,6 +16,15 @@ const setCurrentDate = () => {
 };
 
 const drawDateTemplate = () => {
+  dateInstance.setDate(1);
+  let day = dateInstance.getDay();
+  if (day === 0) {
+    day = 7;
+  }
+  for (let i = 0; i < day - 1; i++) {
+    const emptyLi = document.createElement("li");
+    dateContainer.appendChild(emptyLi);
+  }
   const lastDate = lastDateOfMonth[month];
   for (let i = 1; i <= lastDate; i++) {
     const eachDate = document.createElement("li");
