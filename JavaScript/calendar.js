@@ -3,6 +3,8 @@ const monthContainer = document.querySelector(".month");
 const dateContainer = document.querySelector(".date_list");
 const leftMonthBtn = document.querySelector(".left_month_btn");
 const rightMonthBtn = document.querySelector(".right_month_btn");
+const leftYearBtn = document.querySelector(".left_year_btn");
+const rightYearBtn = document.querySelector(".right_year_btn");
 
 const dateInstance = new Date();
 
@@ -56,6 +58,22 @@ rightMonthBtn.addEventListener("click", () => {
     month += 1;
   }
   dateInstance.setMonth(month);
+  init();
+});
+
+leftYearBtn.addEventListener("click", () => {
+  if (year === 0) {
+    year = 0;
+  } else {
+    year -= 1;
+  }
+  dateInstance.setFullYear(year);
+  init();
+});
+
+rightYearBtn.addEventListener("click", () => {
+  year += 1;
+  dateInstance.setFullYear(year);
   init();
 });
 
