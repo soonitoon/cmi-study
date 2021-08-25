@@ -39,45 +39,47 @@ const drawDateTemplate = () => {
   }
 };
 
-leftMonthBtn.addEventListener("click", () => {
-  if (month === 0) {
-    month = 11;
-    year -= 1;
-    dateInstance.setFullYear(year);
-  } else {
-    month -= 1;
-  }
-  dateInstance.setMonth(month);
-  init();
-});
+const setBtnListeners = () => {
+  leftMonthBtn.addEventListener("click", () => {
+    if (month === 0) {
+      month = 11;
+      year -= 1;
+      dateInstance.setFullYear(year);
+    } else {
+      month -= 1;
+    }
+    dateInstance.setMonth(month);
+    init();
+  });
 
-rightMonthBtn.addEventListener("click", () => {
-  if (month === 11) {
-    month = 0;
+  rightMonthBtn.addEventListener("click", () => {
+    if (month === 11) {
+      month = 0;
+      year += 1;
+      dateInstance.setFullYear(year);
+    } else {
+      month += 1;
+    }
+    dateInstance.setMonth(month);
+    init();
+  });
+
+  leftYearBtn.addEventListener("click", () => {
+    if (year === 0) {
+      year = 0;
+    } else {
+      year -= 1;
+    }
+    dateInstance.setFullYear(year);
+    init();
+  });
+
+  rightYearBtn.addEventListener("click", () => {
     year += 1;
     dateInstance.setFullYear(year);
-  } else {
-    month += 1;
-  }
-  dateInstance.setMonth(month);
-  init();
-});
-
-leftYearBtn.addEventListener("click", () => {
-  if (year === 0) {
-    year = 0;
-  } else {
-    year -= 1;
-  }
-  dateInstance.setFullYear(year);
-  init();
-});
-
-rightYearBtn.addEventListener("click", () => {
-  year += 1;
-  dateInstance.setFullYear(year);
-  init();
-});
+    init();
+  });
+};
 
 const paintToday = () => {
   const realYear = dateInstanceForCompare.getFullYear();
@@ -102,3 +104,4 @@ const init = () => {
 };
 
 init();
+setBtnListeners();
