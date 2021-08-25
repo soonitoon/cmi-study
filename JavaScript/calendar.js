@@ -88,10 +88,14 @@ const paintToday = () => {
   }
 };
 
-const init = () => {
+const clearCalendar = () => {
   yearContainer.innerHTML = "";
   monthContainer.innerHTML = "";
   dateContainer.innerHTML = "";
+};
+
+const init = () => {
+  clearCalendar();
   drawDateTemplate();
   setCurrentDate();
   paintToday();
