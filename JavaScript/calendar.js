@@ -1,6 +1,8 @@
 const yearContainer = document.querySelector(".year");
 const monthContainer = document.querySelector(".month");
 const dateContainer = document.querySelector(".date_list");
+const leftMonthBtn = document.querySelector(".left_month_btn");
+const rightMonthBtn = document.querySelector(".right_month_btn");
 
 const dateInstance = new Date();
 
@@ -32,6 +34,30 @@ const drawDateTemplate = () => {
     dateContainer.appendChild(eachDate);
   }
 };
+
+leftMonthBtn.addEventListener("click", () => {
+  if (month === 0) {
+    month = 11;
+    year -= 1;
+    dateInstance.setFullYear(year);
+  } else {
+    month -= 1;
+  }
+  dateInstance.setMonth(month);
+  init();
+});
+
+rightMonthBtn.addEventListener("click", () => {
+  if (month === 11) {
+    month = 0;
+    year += 1;
+    dateInstance.setFullYear(year);
+  } else {
+    month += 1;
+  }
+  dateInstance.setMonth(month);
+  init();
+});
 
 const init = () => {
   drawDateTemplate();
