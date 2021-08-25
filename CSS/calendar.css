@@ -19,3 +19,8 @@ main {
   grid-template-columns: repeat(7, minmax(50px, auto));
   text-align: center;
 }
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+}
