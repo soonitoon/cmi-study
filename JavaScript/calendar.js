@@ -78,6 +78,9 @@ rightYearBtn.addEventListener("click", () => {
 });
 
 const init = () => {
+  yearContainer.innerHTML = "";
+  monthContainer.innerHTML = "";
+  dateContainer.innerHTML = "";
   drawDateTemplate();
   setCurrentDate();
 };
