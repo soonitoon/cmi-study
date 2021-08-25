@@ -17,4 +17,5 @@ main {
 .date_list {
   display: grid;
   grid-template-columns: repeat(7, minmax(50px, auto));
+  text-align: center;
 }
