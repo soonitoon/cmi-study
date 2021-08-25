@@ -22,20 +22,30 @@ const setCurrentDate = () => {
 
 const drawDateTemplate = () => {
   dateInstance.setDate(1);
-  let day = dateInstance.getDay();
-  if (day === 0) {
-    day = 7;
+  let firstDay = dateInstance.getDay();
+  if (firstDay === 0) {
+    firstDay = 7;
   }
-  for (let i = 0; i < day - 1; i++) {
-    const emptyLi = document.createElement("li");
-    dateContainer.appendChild(emptyLi);
+  for (let i = 0; i < firstDay - 1; i++) {
+    const pastDate = document.createElement("li");
+    pastDate.style.color = "lightgrey";
+    pastDate.innerText = lastDateOfMonth[month - 1] - firstDay + 2 + i;
+    dateContainer.appendChild(pastDate);
   }
   const lastDate = lastDateOfMonth[month];
   for (let i = 1; i <= lastDate; i++) {
-    const eachDate = document.createElement("li");
-    eachDate.innerText = i;
-    eachDate.className = i;
-    dateContainer.appendChild(eachDate);
+    const presentDate = document.createElement("li");
+    presentDate.innerText = i;
+    presentDate.className = i;
+    dateContainer.appendChild(presentDate);
+  }
+  dateInstance.setDate(lastDate);
+  const lastDay = dateInstance.getDay();
+  for (let i = 1; i <= 7 - lastDay; i++) {
+    const futureDate = document.createElement("li");
+    futureDate.innerText = i;
+    futureDate.style.color = "lightgrey";
+    dateContainer.appendChild(futureDate);
   }
 };
 
