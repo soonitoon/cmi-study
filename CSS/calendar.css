@@ -13,11 +13,7 @@ main {
   align-items: center;
 }
 
-.week {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(50px, auto));
-}
-
+.week,
 .date_list {
   display: grid;
   grid-template-columns: repeat(7, minmax(50px, auto));
