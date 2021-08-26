@@ -7,7 +7,6 @@ const leftYearBtn = document.querySelector(".left_year_btn");
 const rightYearBtn = document.querySelector(".right_year_btn");
 
 const dateInstance = new Date();
-const dateInstanceForCompare = new Date();
 
 const lastDateOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -92,11 +91,12 @@ const setBtnListeners = () => {
 };
 
 const paintToday = () => {
-  const realYear = dateInstanceForCompare.getFullYear();
-  const realMonth = dateInstanceForCompare.getMonth();
-  if (realYear === year && realMonth === month) {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth();
+  if (currentYear === year && currentMonth === month) {
     const today = document.getElementsByClassName(date);
-    today[0].style.color = "blue";
+    today[0].style.color = "skyblue";
   }
 };
 
