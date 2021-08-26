@@ -30,6 +30,11 @@ main {
   text-align: center;
 }
 
+.week {
+  margin-bottom: 30px;
+  color: #09cefc;
+}
+
 .date_list {
   grid-template-rows: repeat(6, minmax(20px, auto));
 }
