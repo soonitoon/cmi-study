@@ -13,6 +13,11 @@ main {
   align-items: center;
 }
 
+.main-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 70px;
+  margin-bottom: 40px;
+}
 .week,
 .date_list {
   display: grid;
