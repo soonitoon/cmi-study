@@ -30,6 +30,10 @@ main {
   text-align: center;
 }
 
+li:nth-child(7n + 1) {
+  color: #ee3b50;
+}
+
 .week {
   margin-bottom: 30px;
   color: #09cefc;
