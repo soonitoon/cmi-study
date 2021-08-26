@@ -22,8 +22,11 @@ const setCurrentDate = () => {
 const drawDateTemplate = () => {
   dateInstance.setDate(1);
   let firstDay = dateInstance.getDay();
-  if (firstDay === 0) {
-    firstDay = 7;
+  let pastMonth;
+  if (month === 0) {
+    pastMonth = 11;
+  } else {
+    pastMonth = month - 1;
   }
   for (let i = 0; i < firstDay; i++) {
     const pastDate = document.createElement("li");
@@ -57,7 +60,7 @@ const setBtnListeners = () => {
     } else {
       month -= 1;
     }
-    dateInstance.setMonth(month);
+    dateInstance.setMonth(month, 1);
     init();
   });
 
@@ -69,7 +72,7 @@ const setBtnListeners = () => {
     } else {
       month += 1;
     }
-    dateInstance.setMonth(month);
+    dateInstance.setMonth(month, 1);
     init();
   });
 
