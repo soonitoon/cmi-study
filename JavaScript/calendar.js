@@ -27,8 +27,7 @@ const drawDateTemplate = () => {
   }
   for (let i = 0; i < firstDay - 1; i++) {
     const pastDate = document.createElement("li");
-    pastDate.style.color = "lightgrey";
-    pastDate.innerText = lastDateOfMonth[month - 1] - firstDay + 2 + i;
+    pastDate.style.color = "grey";
     dateContainer.appendChild(pastDate);
   }
   const lastDate = lastDateOfMonth[month];
@@ -43,7 +42,7 @@ const drawDateTemplate = () => {
   for (let i = 1; i <= 7 - lastDay; i++) {
     const futureDate = document.createElement("li");
     futureDate.innerText = i;
-    futureDate.style.color = "lightgrey";
+    futureDate.style.color = "grey";
     dateContainer.appendChild(futureDate);
   }
 };
@@ -96,7 +95,7 @@ const paintToday = () => {
   const currentMonth = currentDate.getMonth();
   if (currentYear === year && currentMonth === month) {
     const today = document.getElementsByClassName(date);
-    today[0].style.color = "skyblue";
+    today[0].style.color = "#09cefc";
   }
 };
 
