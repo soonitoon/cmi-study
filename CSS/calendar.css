@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f111b;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 70px;
+  margin-bottom: 40px;
+}
+
+.left_year_btn,
+.right_year_btn,
+.left_month_btn,
+.right_month_btn {
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  font-size: 30px;
+  color: #09cefc;
+}
+
+.month-container {
+  margin-bottom: 20px;
+}
+
+.year {
+  font-size: 50px;
+}
+.month {
+  font-size: 40px;
+}
+
+.week,
+.date_list {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(90px, auto));
+  text-align: center;
+}
+
+li:nth-child(7n + 1) {
+  color: #ee3b50;
+}
+
+.week {
+  margin-bottom: 30px;
+  color: #09cefc;
+}
+
+.date_list {
+  grid-template-rows: repeat(6, minmax(60px, auto));
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
