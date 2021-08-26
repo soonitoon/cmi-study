@@ -25,9 +25,10 @@ const drawDateTemplate = () => {
   if (firstDay === 0) {
     firstDay = 7;
   }
-  for (let i = 0; i < firstDay - 1; i++) {
+  for (let i = 0; i < firstDay; i++) {
     const pastDate = document.createElement("li");
     pastDate.style.color = "grey";
+    pastDate.innerText = lastDateOfMonth[pastMonth] - firstDay + 1 + i;
     dateContainer.appendChild(pastDate);
   }
   const lastDate = lastDateOfMonth[month];
@@ -39,7 +40,7 @@ const drawDateTemplate = () => {
   }
   dateInstance.setDate(lastDate);
   const lastDay = dateInstance.getDay();
-  for (let i = 1; i <= 7 - lastDay; i++) {
+  for (let i = 1; i < 7 - lastDay; i++) {
     const futureDate = document.createElement("li");
     futureDate.innerText = i;
     futureDate.style.color = "grey";
