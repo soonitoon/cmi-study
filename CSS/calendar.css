@@ -20,6 +20,10 @@ main {
   text-align: center;
 }
 
+.date_list {
+  grid-template-rows: repeat(6, minmax(20px, auto));
+}
+
 .row-container {
   display: flex;
   flex-direction: row;
