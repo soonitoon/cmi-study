@@ -6,6 +6,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #0f111b;
@@ -25,10 +26,10 @@ main {
   margin-bottom: 40px;
 }
 
-.left_year_btn,
-.right_year_btn,
-.left_month_btn,
-.right_month_btn {
+.left-year-btn,
+.right-year-btn,
+.left-month-btn,
+.right-month-btn {
   border: none;
   border-radius: 10px;
   background-color: transparent;
@@ -48,7 +49,7 @@ main {
 }
 
 .week,
-.date_list {
+.date-list {
   display: grid;
   grid-template-columns: repeat(7, minmax(90px, auto));
   text-align: center;
@@ -63,7 +64,7 @@ li:nth-child(7n + 1) {
   color: #09cefc;
 }
 
-.date_list {
+.date-list {
   grid-template-rows: repeat(6, minmax(60px, auto));
 }
 
@@ -71,4 +72,8 @@ li:nth-child(7n + 1) {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+footer {
+  font-size: 14px;
 }
