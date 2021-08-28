@@ -1,8 +1,8 @@
 const yearContainer = document.querySelector(".year");
 const monthContainer = document.querySelector(".month");
 const dateContainer = document.querySelector(".date-list");
-const leftMonthBtn = document.querySelector(".left-month_btn");
-const rightMonthBtn = document.querySelector(".right-month_btn");
+const leftMonthBtn = document.querySelector(".left-month-btn");
+const rightMonthBtn = document.querySelector(".right-month-btn");
 const leftYearBtn = document.querySelector(".left-year-btn");
 const rightYearBtn = document.querySelector(".right-year-btn");
 
