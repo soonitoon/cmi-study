@@ -8,7 +8,7 @@ const rightYearBtn = document.querySelector(".right-year-btn");
 
 const dateInstance = new Date();
 
-const lastDateOfMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const lastDateOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 let year = dateInstance.getFullYear();
 let month = dateInstance.getMonth();
@@ -17,6 +17,15 @@ let date = dateInstance.getDate();
 const setCurrentDate = () => {
   yearContainer.innerText = year;
   monthContainer.innerText = month + 1;
+};
+
+const getLastDateOfMonth = (month) => {
+  if (month === 1) {
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+      return 29;
+    }
+  }
+  return lastDateOfMonth[month];
 };
 
 const drawDateTemplate = () => {
@@ -31,10 +40,10 @@ const drawDateTemplate = () => {
   for (let i = 0; i < firstDay; i++) {
     const pastDate = document.createElement("li");
     pastDate.style.color = "grey";
-    pastDate.innerText = lastDateOfMonth[pastMonth] - firstDay + 1 + i;
+    pastDate.innerText = getLastDateOfMonth(pastMonth) - firstDay + 1 + i;
     dateContainer.appendChild(pastDate);
   }
-  const lastDate = lastDateOfMonth[month];
+  const lastDate = getLastDateOfMonth(month);
   for (let i = 1; i <= lastDate; i++) {
     const presentDate = document.createElement("li");
     presentDate.innerText = i;
