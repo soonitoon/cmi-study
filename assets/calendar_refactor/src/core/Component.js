@@ -1,4 +1,4 @@
-import { observe } from "./observer.js";
+import { observe } from "./Observer.js";
 
 export default class Components {
   props;
