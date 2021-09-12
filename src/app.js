@@ -1,7 +1,8 @@
 import calendarData from "./data/calendar.js";
+import calendarReactData from "./data/calendar_react.js";
 import calendarRefactorData from "./data/calendar_refactor.js";
 
-const data = [calendarData, calendarRefactorData];
+const data = [calendarData, calendarRefactorData, calendarReactData];
 const $app = document.querySelector("#app");
 
 const template = () => {
