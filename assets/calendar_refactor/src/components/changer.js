@@ -9,16 +9,16 @@ import {
 
 export default class changer extends Components {
   setEvent() {
-    super.addEvent("click", ".left-year-btn", () => {
+    this.addEvent("click", ".left-year-btn", () => {
       store.dispatch(decreaseYear());
     });
-    super.addEvent("click", ".right-year-btn", () => {
+    this.addEvent("click", ".right-year-btn", () => {
       store.dispatch(increaseYear());
     });
-    super.addEvent("click", ".left-month-btn", () => {
+    this.addEvent("click", ".left-month-btn", () => {
       store.dispatch(decreaseMonth());
     });
-    super.addEvent("click", ".right-month-btn", () => {
+    this.addEvent("click", ".right-month-btn", () => {
       store.dispatch(increaseMonth());
     });
   }
